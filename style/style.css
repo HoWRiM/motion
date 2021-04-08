@@ -185,6 +185,10 @@ body {
 }
 
 /* -- PAGE ITEM -- */
+.page {
+  padding: 0;
+}
+
 .page-item {
   margin: 1.5em;
   display: flex;
@@ -249,4 +253,26 @@ body {
 .todo-label {
   padding: 1em;
   color: var(--smokywhite);
+}
+
+.mute-children * {
+  pointer-events: none;
+}
+
+.lifted {
+  animation: drag_start 250ms;
+  opacity: 0.2;
+}
+
+@keyframes drag_start {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.drop-area {
+  border: 2px solid var(--accent-color);
 }
