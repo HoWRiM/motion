@@ -8,9 +8,6 @@ export default class BaseComponent<T extends HTMLElement> implements Component {
 	constructor(htmlString: string) {
 		const template = document.createElement('template');
 		template.innerHTML = htmlString;
-
-
-		template.prepend();
 		this.element = template.content.firstElementChild! as T;
 	}
 
@@ -20,7 +17,7 @@ export default class BaseComponent<T extends HTMLElement> implements Component {
 
 	removeFrom(parent: HTMLElement) {
 		if (parent !== this.element.parentElement) {
-			throw new Error('Parent Mismatch!');
+			throw new Error('Parent');
 		}
 		parent.removeChild(this.element);
 	}
